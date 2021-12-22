@@ -1,0 +1,158 @@
+// Media Queries
+$desktop: "min-width: 576px";
+$mobile: "max-width: 575px";
+// Import Global Rules
+@import "global-rules";
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  @media ($mobile) {
+    padding: 0 15px;
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @media ($desktop) {
+    align-items: center;
+
+    > .flyo {
+      width: 920px;
+      display: grid;
+      grid-template-columns: 350px 540px;
+      gap: 30px;
+    }
+  }
+
+  > .flyo > {
+    .data {
+      padding: 40px;
+      background-color: var(--dark-blue);
+      border-radius: 10px 100px 10px 10px;
+      @media ($mobile) {
+        margin-bottom: 15px;
+      }
+
+      > .logo {
+        margin-bottom: 30px;
+      }
+      > .icons {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        gap: 15px;
+
+        li {
+          width: 50px;
+          height: 50px;
+          border-radius: 15px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: var(--very-dark-blue);
+        }
+      }
+    }
+    .storage {
+      width: 100%;
+      @media ($mobile) {
+        padding: 30px;
+        text-align: center;
+      }
+      border-radius: 10px;
+      background-color: var(--dark-blue);
+      @media ($desktop) {
+        margin-top: auto;
+        position: relative;
+        padding: 30px 40px;
+      }
+
+      > p.used {
+        color: var(--grayish-blue);
+
+        span {
+          font-weight: bold;
+          color: var(--pale-blue);
+        }
+      }
+      > .progress {
+        width: 100%;
+        height: 20px;
+        padding: 2px;
+        border-radius: 15px;
+        background-color: var(--very-dark-blue);
+
+        div {
+          width: 13px;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          border-radius: inherit;
+          transition: width 1s ease-in-out;
+          background: linear-gradient(
+            to right,
+            var(--gradient-from),
+            var(--gradient-to)
+          );
+
+          span {
+            width: 12px;
+            height: 12px;
+            display: block;
+            margin-right: 3px;
+            border-radius: 50%;
+            background-color: white;
+          }
+        }
+      }
+      > .count {
+        display: flex;
+        justify-content: space-between;
+        color: var(--pale-blue);
+        font-weight: bold;
+      }
+      > .left {
+        width: 180px;
+        padding: 20px;
+        border-radius: 15px;
+        background-color: white;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        @media ($mobile) {
+          margin: -65px auto 0;
+          transform: translateY(70px);
+        }
+        @media ($desktop) {
+          position: absolute;
+          top: -60px;
+          right: 30px;
+
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: -25px;
+            right: 0;
+            border: 20px solid transparent {
+              top-color: white;
+              right-color: white;
+            }
+          }
+        }
+
+        > h2 {
+          margin: 0;
+          font-size: 40px;
+          color: var(--very-dark-blue);
+        }
+        > p {
+          text-transform: uppercase;
+          color: var(--grayish-blue);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --dark-blue: hsl(228, 56%, 26%);
+  --pale-blue: hsl(243, 100%, 93%);
+  --grayish-blue: hsl(229, 7%, 55%);
+  --very-dark-blue: hsl(229, 57%, 11%);
+  --gradient-from: hsl(6, 100%, 80%);
+  --gradient-to: hsl(335, 100%, 65%);
+}
+
+body {
+  margin: 0;
+  font-size: 14px;
+  font-family: "Raleway", sans-serif;
+  background: var(--very-dark-blue) url("../images/bg-mobile.png") no-repeat bottom;
+  background-size: cover;
+}
+
+@media (min-width: 576px) {
+  body {
+    background-size: 100% 50%;
+    background-image: url("../images/bg-desktop.png");
+  }
+}
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 575px) {
+  .page {
+    padding: 0 15px;
+  }
+}
+
+@media (min-width: 576px) {
+  .page {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .page > .flyo {
+    width: 920px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 350px 540px;
+        grid-template-columns: 350px 540px;
+    gap: 30px;
+  }
+}
+
+.page > .flyo > .data {
+  padding: 40px;
+  background-color: var(--dark-blue);
+  border-radius: 10px 100px 10px 10px;
+}
+
+@media (max-width: 575px) {
+  .page > .flyo > .data {
+    margin-bottom: 15px;
+  }
+}
+
+.page > .flyo > .data > .logo {
+  margin-bottom: 30px;
+}
+
+.page > .flyo > .data > .icons {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+}
+
+.page > .flyo > .data > .icons li {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: var(--very-dark-blue);
+}
+
+.page > .flyo > .storage {
+  width: 100%;
+  border-radius: 10px;
+  background-color: var(--dark-blue);
+}
+
+@media (max-width: 575px) {
+  .page > .flyo > .storage {
+    padding: 30px;
+    text-align: center;
+  }
+}
+
+@media (min-width: 576px) {
+  .page > .flyo > .storage {
+    margin-top: auto;
+    position: relative;
+    padding: 30px 40px;
+  }
+}
+
+.page > .flyo > .storage > p.used {
+  color: var(--grayish-blue);
+}
+
+.page > .flyo > .storage > p.used span {
+  font-weight: bold;
+  color: var(--pale-blue);
+}
+
+.page > .flyo > .storage > .progress {
+  width: 100%;
+  height: 20px;
+  padding: 2px;
+  border-radius: 15px;
+  background-color: var(--very-dark-blue);
+}
+
+.page > .flyo > .storage > .progress div {
+  width: 13px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  border-radius: inherit;
+  -webkit-transition: width 1s ease-in-out;
+  transition: width 1s ease-in-out;
+  background: -webkit-gradient(linear, left top, right top, from(var(--gradient-from)), to(var(--gradient-to)));
+  background: linear-gradient(to right, var(--gradient-from), var(--gradient-to));
+}
+
+.page > .flyo > .storage > .progress div span {
+  width: 12px;
+  height: 12px;
+  display: block;
+  margin-right: 3px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.page > .flyo > .storage > .count {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: var(--pale-blue);
+  font-weight: bold;
+}
+
+.page > .flyo > .storage > .left {
+  width: 180px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 575px) {
+  .page > .flyo > .storage > .left {
+    margin: -65px auto 0;
+    -webkit-transform: translateY(70px);
+            transform: translateY(70px);
+  }
+}
+
+@media (min-width: 576px) {
+  .page > .flyo > .storage > .left {
+    position: absolute;
+    top: -60px;
+    right: 30px;
+  }
+  .page > .flyo > .storage > .left::before {
+    content: "";
+    position: absolute;
+    bottom: -25px;
+    right: 0;
+    border: 20px solid transparent;
+    border-top-color: white;
+    border-right-color: white;
+  }
+}
+
+.page > .flyo > .storage > .left > h2 {
+  margin: 0;
+  font-size: 40px;
+  color: var(--very-dark-blue);
+}
+
+.page > .flyo > .storage > .left > p {
+  text-transform: uppercase;
+  color: var(--grayish-blue);
+}
+/*# sourceMappingURL=main.css.map */
